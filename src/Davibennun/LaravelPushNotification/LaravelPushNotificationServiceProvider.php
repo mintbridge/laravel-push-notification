@@ -1,10 +1,10 @@
 <?php namespace Davibennun\LaravelPushNotification;
 
-use Illuminate\Support\ServiceProvider,
-    Davibennun\LaravelPushNotification\PushNotification;
+use Illuminate\Support\ServiceProvider;
+use Davibennun\LaravelPushNotification\PushNotification;
 
-class LaravelPushNotificationServiceProvider extends ServiceProvider {
-
+class LaravelPushNotificationServiceProvider extends ServiceProvider
+{
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -29,8 +29,7 @@ class LaravelPushNotificationServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app['pushNotification'] = $this->app->share(function($app)
-        {
+        $this->app['pushNotification'] = $this->app->share(function($app) {
             return new PushNotification();
         });
     }
@@ -44,5 +43,4 @@ class LaravelPushNotificationServiceProvider extends ServiceProvider {
     {
         return array();
     }
-
 }

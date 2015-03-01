@@ -1,52 +1,58 @@
 <?php namespace Davibennun\LaravelPushNotification;
 
-class PushNotification {
-
+class PushNotification
+{
     public function app($appName)
     {
         return new App(\Config::get('laravel-push-notification::'.$appName));
     }
 
-    public function Message()
+    public function message()
     {
-      $instance = (new \ReflectionClass('Sly\NotificationPusher\Model\Message'));
+        $instance = (new \ReflectionClass('Sly\NotificationPusher\Model\Message'));
+
         return $instance->newInstanceArgs(func_get_args());
     }
 
-    public function Device()
+    public function device()
     {
-      $instance = (new \ReflectionClass('Sly\NotificationPusher\Model\Device'));
+        $instance = (new \ReflectionClass('Sly\NotificationPusher\Model\Device'));
+
         return $instance->newInstanceArgs(func_get_args());
     }
 
-    public function DeviceCollection()
+    public function deviceCollection()
     {
-      $instance = (new \ReflectionClass('Sly\NotificationPusher\Collection\DeviceCollection'));
+        $instance = (new \ReflectionClass('Sly\NotificationPusher\Collection\DeviceCollection'));
+
         return $instance->newInstanceArgs(func_get_args());
     }
 
-    public function PushManager()
+    public function pushManager()
     {
-      $instance = (new \ReflectionClass('Sly\NotificationPusher\PushManager'));
+        $instance = (new \ReflectionClass('Sly\NotificationPusher\PushManager'));
+
         return $instance->newInstanceArgs(func_get_args());
     }
 
-    public function ApnsAdapter()
+    public function apnsAdapter()
     {
-      $instance = (new \ReflectionClass('Sly\NotificationPusher\Adapter\ApnsAdapter'));
+        $instance = (new \ReflectionClass('Sly\NotificationPusher\Adapter\ApnsAdapter'));
+
         return $instance->newInstanceArgs(func_get_args());
     }
 
-    public function GcmAdapter()
+    public function gcmAdapter()
     {
-      $instance = (new \ReflectionClass('Sly\NotificationPusher\Model\GcmAdapter'));
+        $instance = (new \ReflectionClass('Sly\NotificationPusher\Model\GcmAdapter'));
+
         return $instance->newInstanceArgs(func_get_args());
     }
 
-    public function Push()
+    public function push()
     {
-      $instance = (new \ReflectionClass('Sly\NotificationPusher\Model\Push'));
+        $instance = (new \ReflectionClass('Sly\NotificationPusher\Model\Push'));
+
         return $instance->newInstanceArgs(func_get_args());
     }
-
 }
